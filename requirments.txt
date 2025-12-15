@@ -1,0 +1,6 @@
+grpcio
+grpcio-tools
+protobuf
+SQLAlchemy>=2.0
+asyncpg
+psycopg2-binary

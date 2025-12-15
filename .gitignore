@@ -1,0 +1,17 @@
+cat > .gitignore <<EOF
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Env
+.env
+.env.*
+
+# Docker
+*.log
+
+# OS
+.DS_Store
+EOF
