@@ -3,7 +3,7 @@
 import grpc
 import warnings
 
-import library_pb2 as library__pb2
+from proto import library_pb2 as proto_dot_library__pb2
 
 GRPC_GENERATED_VERSION = '1.76.0'
 GRPC_VERSION = grpc.__version__
@@ -18,7 +18,7 @@ except ImportError:
 if _version_not_supported:
     raise RuntimeError(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + ' but the generated code in library_pb2_grpc.py depends on'
+        + ' but the generated code in proto/library_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
@@ -36,38 +36,38 @@ class LibraryServiceStub(object):
         """
         self.CreateBook = channel.unary_unary(
                 '/library.LibraryService/CreateBook',
-                request_serializer=library__pb2.CreateBookRequest.SerializeToString,
-                response_deserializer=library__pb2.CreateBookResponse.FromString,
+                request_serializer=proto_dot_library__pb2.CreateBookRequest.SerializeToString,
+                response_deserializer=proto_dot_library__pb2.CreateBookResponse.FromString,
                 _registered_method=True)
         self.UpdateBook = channel.unary_unary(
                 '/library.LibraryService/UpdateBook',
-                request_serializer=library__pb2.UpdateBookRequest.SerializeToString,
-                response_deserializer=library__pb2.CreateBookResponse.FromString,
+                request_serializer=proto_dot_library__pb2.UpdateBookRequest.SerializeToString,
+                response_deserializer=proto_dot_library__pb2.CreateBookResponse.FromString,
                 _registered_method=True)
         self.CreateMember = channel.unary_unary(
                 '/library.LibraryService/CreateMember',
-                request_serializer=library__pb2.CreateMemberRequest.SerializeToString,
-                response_deserializer=library__pb2.CreateMemberResponse.FromString,
+                request_serializer=proto_dot_library__pb2.CreateMemberRequest.SerializeToString,
+                response_deserializer=proto_dot_library__pb2.CreateMemberResponse.FromString,
                 _registered_method=True)
         self.UpdateMember = channel.unary_unary(
                 '/library.LibraryService/UpdateMember',
-                request_serializer=library__pb2.UpdateMemberRequest.SerializeToString,
-                response_deserializer=library__pb2.CreateMemberResponse.FromString,
+                request_serializer=proto_dot_library__pb2.UpdateMemberRequest.SerializeToString,
+                response_deserializer=proto_dot_library__pb2.CreateMemberResponse.FromString,
                 _registered_method=True)
         self.BorrowBook = channel.unary_unary(
                 '/library.LibraryService/BorrowBook',
-                request_serializer=library__pb2.BorrowRequest.SerializeToString,
-                response_deserializer=library__pb2.BorrowResponse.FromString,
+                request_serializer=proto_dot_library__pb2.BorrowRequest.SerializeToString,
+                response_deserializer=proto_dot_library__pb2.BorrowResponse.FromString,
                 _registered_method=True)
         self.ReturnBook = channel.unary_unary(
                 '/library.LibraryService/ReturnBook',
-                request_serializer=library__pb2.ReturnRequest.SerializeToString,
-                response_deserializer=library__pb2.ReturnResponse.FromString,
+                request_serializer=proto_dot_library__pb2.ReturnRequest.SerializeToString,
+                response_deserializer=proto_dot_library__pb2.ReturnResponse.FromString,
                 _registered_method=True)
         self.ListBorrowedByMember = channel.unary_unary(
                 '/library.LibraryService/ListBorrowedByMember',
-                request_serializer=library__pb2.ListBorrowedByMemberRequest.SerializeToString,
-                response_deserializer=library__pb2.ListBorrowedByMemberResponse.FromString,
+                request_serializer=proto_dot_library__pb2.ListBorrowedByMemberRequest.SerializeToString,
+                response_deserializer=proto_dot_library__pb2.ListBorrowedByMemberResponse.FromString,
                 _registered_method=True)
 
 
@@ -121,38 +121,38 @@ def add_LibraryServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'CreateBook': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateBook,
-                    request_deserializer=library__pb2.CreateBookRequest.FromString,
-                    response_serializer=library__pb2.CreateBookResponse.SerializeToString,
+                    request_deserializer=proto_dot_library__pb2.CreateBookRequest.FromString,
+                    response_serializer=proto_dot_library__pb2.CreateBookResponse.SerializeToString,
             ),
             'UpdateBook': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateBook,
-                    request_deserializer=library__pb2.UpdateBookRequest.FromString,
-                    response_serializer=library__pb2.CreateBookResponse.SerializeToString,
+                    request_deserializer=proto_dot_library__pb2.UpdateBookRequest.FromString,
+                    response_serializer=proto_dot_library__pb2.CreateBookResponse.SerializeToString,
             ),
             'CreateMember': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateMember,
-                    request_deserializer=library__pb2.CreateMemberRequest.FromString,
-                    response_serializer=library__pb2.CreateMemberResponse.SerializeToString,
+                    request_deserializer=proto_dot_library__pb2.CreateMemberRequest.FromString,
+                    response_serializer=proto_dot_library__pb2.CreateMemberResponse.SerializeToString,
             ),
             'UpdateMember': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateMember,
-                    request_deserializer=library__pb2.UpdateMemberRequest.FromString,
-                    response_serializer=library__pb2.CreateMemberResponse.SerializeToString,
+                    request_deserializer=proto_dot_library__pb2.UpdateMemberRequest.FromString,
+                    response_serializer=proto_dot_library__pb2.CreateMemberResponse.SerializeToString,
             ),
             'BorrowBook': grpc.unary_unary_rpc_method_handler(
                     servicer.BorrowBook,
-                    request_deserializer=library__pb2.BorrowRequest.FromString,
-                    response_serializer=library__pb2.BorrowResponse.SerializeToString,
+                    request_deserializer=proto_dot_library__pb2.BorrowRequest.FromString,
+                    response_serializer=proto_dot_library__pb2.BorrowResponse.SerializeToString,
             ),
             'ReturnBook': grpc.unary_unary_rpc_method_handler(
                     servicer.ReturnBook,
-                    request_deserializer=library__pb2.ReturnRequest.FromString,
-                    response_serializer=library__pb2.ReturnResponse.SerializeToString,
+                    request_deserializer=proto_dot_library__pb2.ReturnRequest.FromString,
+                    response_serializer=proto_dot_library__pb2.ReturnResponse.SerializeToString,
             ),
             'ListBorrowedByMember': grpc.unary_unary_rpc_method_handler(
                     servicer.ListBorrowedByMember,
-                    request_deserializer=library__pb2.ListBorrowedByMemberRequest.FromString,
-                    response_serializer=library__pb2.ListBorrowedByMemberResponse.SerializeToString,
+                    request_deserializer=proto_dot_library__pb2.ListBorrowedByMemberRequest.FromString,
+                    response_serializer=proto_dot_library__pb2.ListBorrowedByMemberResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -180,8 +180,8 @@ class LibraryService(object):
             request,
             target,
             '/library.LibraryService/CreateBook',
-            library__pb2.CreateBookRequest.SerializeToString,
-            library__pb2.CreateBookResponse.FromString,
+            proto_dot_library__pb2.CreateBookRequest.SerializeToString,
+            proto_dot_library__pb2.CreateBookResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -207,8 +207,8 @@ class LibraryService(object):
             request,
             target,
             '/library.LibraryService/UpdateBook',
-            library__pb2.UpdateBookRequest.SerializeToString,
-            library__pb2.CreateBookResponse.FromString,
+            proto_dot_library__pb2.UpdateBookRequest.SerializeToString,
+            proto_dot_library__pb2.CreateBookResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -234,8 +234,8 @@ class LibraryService(object):
             request,
             target,
             '/library.LibraryService/CreateMember',
-            library__pb2.CreateMemberRequest.SerializeToString,
-            library__pb2.CreateMemberResponse.FromString,
+            proto_dot_library__pb2.CreateMemberRequest.SerializeToString,
+            proto_dot_library__pb2.CreateMemberResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -261,8 +261,8 @@ class LibraryService(object):
             request,
             target,
             '/library.LibraryService/UpdateMember',
-            library__pb2.UpdateMemberRequest.SerializeToString,
-            library__pb2.CreateMemberResponse.FromString,
+            proto_dot_library__pb2.UpdateMemberRequest.SerializeToString,
+            proto_dot_library__pb2.CreateMemberResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -288,8 +288,8 @@ class LibraryService(object):
             request,
             target,
             '/library.LibraryService/BorrowBook',
-            library__pb2.BorrowRequest.SerializeToString,
-            library__pb2.BorrowResponse.FromString,
+            proto_dot_library__pb2.BorrowRequest.SerializeToString,
+            proto_dot_library__pb2.BorrowResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -315,8 +315,8 @@ class LibraryService(object):
             request,
             target,
             '/library.LibraryService/ReturnBook',
-            library__pb2.ReturnRequest.SerializeToString,
-            library__pb2.ReturnResponse.FromString,
+            proto_dot_library__pb2.ReturnRequest.SerializeToString,
+            proto_dot_library__pb2.ReturnResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -342,8 +342,8 @@ class LibraryService(object):
             request,
             target,
             '/library.LibraryService/ListBorrowedByMember',
-            library__pb2.ListBorrowedByMemberRequest.SerializeToString,
-            library__pb2.ListBorrowedByMemberResponse.FromString,
+            proto_dot_library__pb2.ListBorrowedByMemberRequest.SerializeToString,
+            proto_dot_library__pb2.ListBorrowedByMemberResponse.FromString,
             options,
             channel_credentials,
             insecure,

@@ -1,6 +1,12 @@
-grpcio
-grpcio-tools
-protobuf
-SQLAlchemy>=2.0
-asyncpg
-psycopg2-binary
+# gRPC core
+grpcio==1.64.1
+grpcio-tools==1.64.1
+protobuf==4.25.3
+
+# Async database
+SQLAlchemy==2.0.30
+asyncpg==0.29.0
+
+# Optional but recommended
+python-dotenv==1.0.1
+#dotenv==0.9.9
